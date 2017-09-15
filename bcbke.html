@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>别踩白块儿>MMD工作室</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<style>
+body{
+	width: 400px;
+	height: 100%;
+}
+@media (max-width: 410px){
+	body{
+		font-size: 20px;
+		width: 100%;
+	}
+}
+@media (min-width: 410px){
+	body{
+		font-size: 20px;
+		width: 320px;
+	}
+}
+@media (min-height:320px){
+	body{
+		font-size: 20px;
+	}
+}
+@media (max-height:320px){
+	body{
+		font-size: 10px;
+	}
+}
+html{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(192,192,192,0.8);
+}
+
+	html,body{
+	margin: 0 auto;
+	overflow-x:hidden;
+	overflow-y:hidden;
+	}
+	body{
+		position: relative;
+	}
+	#page1{
+		width: 100%;
+		height: 100%;
+		background-image: url(img/page1-back-img.jpeg);
+		position: absolute;
+		top:0%;
+		z-index: 2;
+	}
+	#page2{
+		width: 100%;
+		height: 100%;
+		background-image: url(img/page2-back-img1.jpg);
+		background-size: 100% 100%;
+		text-align: center;
+		overflow-y:hidden;
+		overflow-x:hidden;
+		position: absolute;
+		z-index: 1;
+	}
+	#page3{
+		width: 100%;
+		height: 100%;
+		background-color: red;
+		display: none;
+		color: white;
+		font-family: 黑体;
+	}
+</style>
+</head>
+<body id="body">
+<!--page1开始-->	
+<div id="page1">
+		<header style="width:100%;height:20%;background-image:url(img/page1-img3.png);background-size: 100% 100%;">
+
+		</header>
+		<aside id="bb"style="width:100%;margin-top:3%;text-align: center;font-size: 100%;background-color: rgba(128,128,255,0.2);">网页版
+		</aside>
+		
+
+		<footer style="width:100%;height:20%;position: absolute;
+		top: 73%;">
+
+<div style="width:20%;height:90%;background-image:url(img/page1-img1.png);background-size: 100% 100%;float: left;"></div>
+
+<div style="width:30%;height:60%;margin-left:15%;margin-top:5%;float: left;background-size: 100% 100%;background-image:url(img/start.png);cursor: pointer;" id="start"
+onclick="startplay(this)"
+
+
+></div>
+
+<div style="width:20%;height:90%;margin-left:80%;background-size: 100% 100%;background-image:url(img/page1-img2.png);"></div>
+
+<div style="width:100%;height:20%;font-size:50%">
+	<div style="width:20%;height:100%;margin-left:0%;background-size: 100% 100%;background-image:url(img/logo.png);font-size: 50%;"></div>
+	©游戏制作：M M D©   工作室
+</div>
+		</footer>
+		
+	</div>
+<script type="text/javascript">
+document.getElementById("start").onclick=function(){
+	startplay();
+	
+	var page2top=0;
+	var page2g=window.setInterval(function(){
+		if(page2top<=-100){
+			document.querySelector("#page1").style.display="none";
+			clearTimeout(page2g);	
+		}
+		--page2top;
+		page2top=page2top*1.05;
+		document.querySelector("#page1").style.top=page2top+"%";
+	},1);	
+	
+};	
+</script>
+<!--page2开始-->
+	<div  id="page2">
+		<audio id="music" style="width:0;height:0;" src="music1.mp3"></audio>
+		
+		<section id="yxq" style="width:80%;height:100%;background-color: rgb(255,255,255);margin-left:10%;position: absolute;
+		z-index: 1;">
+
+<section style="width:100%;height:100%;">
+	
+
+
+<style>
+	#page2>section>section>div{
+		width: 100%;
+		height:22%;
+		clear: left;
+	}
+	#page2>section>section>div>div{
+		width: 24.2%;
+		height: 100%;
+		float: left;
+		border-style: solid;
+		border-width:1px;
+		background-size: 100% 100%;
+	}
+	#hh1{
+		/*background-color: red;*/
+		position: absolute;
+		top: -10%;
+	}
+	#hh2{
+		/*background-color: blue;*/
+		position: absolute;
+		top: 12%;
+	}
+	#hh3{
+		/*background-color: yellow;*/
+		position: absolute;
+		top: 34%;
+	}
+	#hh4{
+		/*background-color: grey;*/
+		position: absolute;
+		top: 56%;
+	}
+	#hh5{
+		/*background-color: orange;*/
+		position: absolute;
+		top: 78%;
+	}
+	#hh6{
+		/*background-color: orange;*/
+		position: absolute;
+		top: -32%;
+	}
+	
+</style>
+
+			<div id="hh1" onclick="z(this)">
+				<div id="h1d1"  onclick="a(this)"></div>
+				<div id="h1d2"  onclick="a(this)"></div>
+				<div id="h1d3"  onclick="a(this)"></div>
+				<div id="h1d4"  onclick="a(this)"></div>
+			</div>
+			<div id="hh2"  onclick="z(this)">
+				<div id="h2d1"  onclick="a(this)"></div>
+				<div id="h2d2"  onclick="a(this)"></div>
+				<div id="h2d3"  onclick="a(this)"></div>
+				<div id="h2d4"  onclick="a(this)"></div>
+			</div>
+			<div id="hh3"  onclick="z(this)">
+				<div id="h3d1"  onclick="a(this)"></div>
+				<div id="h3d2"  onclick="a(this)"></div>
+				<div id="h3d3"  onclick="a(this)"></div>
+				<div id="h3d4"  onclick="a(this)"></div>
+			</div>
+			<div id="hh4"  onclick="z(this)">
+				<div id="h4d1"  onclick="a(this)"></div>
+				<div id="h4d2"  onclick="a(this)"></div>
+				<div id="h4d3"  onclick="a(this)"></div>
+				<div id="h4d4"  onclick="a(this)"></div>
+			</div>
+			<div id="hh5"  onclick="z(this)">
+				<div id="h5d1"  onclick="a(this)" ></div>
+				<div id="h5d2"  onclick="a(this)"></div>
+				<div id="h5d3"  onclick="a(this)"></div>
+				<div id="h5d4"  onclick="a(this)"></div>
+			</div>
+			<div id="hh6"  onclick="z(this)">
+				<div id="h6d1"  onclick="a(this)" ></div>
+				<div id="h6d2"  onclick="a(this)"></div>
+				<div id="h6d3"  onclick="a(this)"></div>
+				<div id="h6d4"  onclick="a(this)"></div>
+			</div>
+
+
+<header  id="timeheader" style="width:100%;height:5%;text-align: center;background-color: rgba(	255,255,255,0.5);float: left;position: absolute;top: 0%;">time:
+</header>
+</section>
+		</section>
+</div>
+
+<div id="page3">
+	<header style="width: 100%;height: 20%;font-size:80%;text-align:right;">
+		别踩白块儿(网页版)MMD工作室
+	</header>
+	<section style="width: 100%;height:50%;">
+		<div style="width: 100%;text-align:center;font-size:200%;height:20%;">经典模式</div>
+		<div id="cgsb" style="width: 100%;text-align:center;font-size:110%;height:40%;"></div>
+		<div id="time" style="width: 100%;text-align:center;font-size:150%;height:40%;"></div>
+	</section>
+
+<footer style="width: 100%;height:25%;">
+	<div id="cll" style="width: 20%;height:100%;float:left;font-size:120%;text-align:center;background-color: black;line-height:100px;"  onclick="cl(this)">重来</div>
+	<div  id="fh" style="width:20%;height:100%;float:right;font-size:120%;text-align:center;background-color: white;color:black;line-height:100px;"  onclick="cl(this)">返回</div>
+</footer>
+	
+</div>
+
+
+
+
+</body>
+</html>
+<script type="text/javascript" src="bcbke.js"></script>	
