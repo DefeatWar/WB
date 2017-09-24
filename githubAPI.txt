@@ -1,7 +1,11 @@
 ------------------------git操作----------------------------------------
 git init       //把目录变成管理仓库
 git add xx.txt //添加到暂存区
+<<<<<<< HEAD
 git commit -m ''    //放入仓库
+=======
+git commit     //放入仓库
+>>>>>>> 9edcb2a3de0561c69f70585fb9413b8855696deb
 git status     //查看是否有文件
 git log        //历史记录
 cat hh.txt     //查看文件内容
