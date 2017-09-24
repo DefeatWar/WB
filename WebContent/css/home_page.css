@@ -1,0 +1,295 @@
+#home_page>nav{
+	width: 100%;
+	position: fixed;
+	z-index: 2;
+}
+#home_page>nav>div{
+	width: 33.333%;
+	float: left;
+	text-align: center;
+	color: white;
+	font-size: 7px;
+	background-color: rgba(25,184,245,1);
+}
+#home_page>nav>div:hover{
+	background-color: white;
+}
+#home_page>nav>div>div{
+	margin: 0 auto;
+	width: 20px;
+	height: 20px;
+	background-size: 100% 100%;
+}
+#arror{
+	width: 0;
+	height: 0;
+	font-size: 0;
+	position:relative;
+	left: 50%;
+	margin-top: 9%;
+	margin-left: -10px;
+	border: solid 10px;
+	border-color: rgba(0,0,0,0);
+	border-top-color:rgba(25,184,245,1);
+}
+#home_page>section{
+	position:relative;
+	top: 34px;
+	width: 100%;
+}
+#message{
+	display: none;
+}
+#home{
+	position: absolute;
+	z-index: 1;
+	background-color: rgb(150,150,150);
+}
+#home>div{
+	width: 100%;
+	height: 91px;
+	background-color: white;
+	margin-bottom: 2px;
+	overflow: hidden;
+	border: solid 0px;
+	border-radius:5px 5px 5px 5px;
+}
+#home>div>header{
+	width: 100%;
+	height: 27px;
+	background-color: rgba(196,225,255,0.5);
+}
+#head_portrait{
+	width: 27px;
+	height: 27px;
+	border: solid 0px;
+	border-radius:13.5px;
+	background-image: url(../img/user_heade.png);
+	background-size: 100% 100%;
+	float: left;
+}
+#post_name{
+	color: rgb(80, 80, 80);
+	letter-spacing: 2px;
+	width: 38%;
+	height: 27px;
+	margin-left: 10px;
+	line-height:27px;
+	font-size: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	float: left;
+}
+#post_time{
+	color: rgb(112, 112, 112);
+	width: 38%;
+	height: 27px;
+	line-height:27px;
+	font-size: 5px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	float: right;
+}
+#home>div>section{
+	width: 100%;
+	height: 40px;
+}
+#home>div>section>div{
+	width: 100%;
+	height: 100%;
+	margin-top: 2px;
+	word-break: break-all;
+	background-color: rgb(240,240,240);
+	display: -webkit-box;
+	-webkit-line-clamp:2;
+	-webkit-box-orient:vertical;
+	overflow: hidden;
+}
+#home>div>footer{
+	width: 100%;
+	height: 20px;
+	margin-top: 2px;
+	background-color: rgba(196,225,255,0.1);
+}
+#home>div>footer>div{
+	font-size: 14px;
+	color: rgb(40, 92, 157);
+	width: 25%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	line-height: 20px;
+}
+#my{
+	display: none;
+	height: 100%;
+	top: 34px;
+}
+#write_post_page{
+	top: 34px;
+	z-index: 1;
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: rgb(230,230,230);
+}
+#write_post_page>input{
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	outline: none;
+	border: none;
+	font-size: 18px;
+	letter-spacing: 1.5px;
+	font-family: 宋体;
+	border-bottom: 1px solid rgb(192,192,192);
+}
+#write_post_content{
+	background-color: white;
+	width: 100%;
+	height: auto;
+	padding-top: 10px;
+	outline: none;
+	border: none;
+	font-size: 15px;
+	font-family: 宋体;
+	border-bottom: 1.5px solid rgb(192,192,192);
+	min-height: 120px;
+	max-height: 300px;
+	overflow: hidden;
+}
+#write_post_ok{
+	width: 39px;
+	height: 39px;
+	background-color: rgb(25,184,245);
+	position: absolute;
+	top: 0%;
+	left: 100%;
+	margin-top: 3px;
+	margin-left: -45px;
+	border: solid 0px;
+	border-radius:26px;
+	font-size: 5px;
+	text-align: center;
+	line-height: 40px;
+	color: white;
+	font-family: 黑体;
+}
+#write_post_photo{
+	width: 30px;
+	height: 25px;
+	margin-top: 25px;
+	margin-left: 5px;
+	background-image: url(../img/photo.png);
+	background-size: 100% 100%;
+}
+#photo_show{
+	width: 100%;
+	overflow-x: hidden;
+}
+#photo_show>img{
+	width: 60px;
+	height: 60px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+#write_post_page>nav>div{
+	margin-right: 5px;
+	margin-top: 0;
+	font-size: 10px;
+	width: 30px;
+	height: 20px;
+	background-color: red;
+	float: left;
+}
+#post_content_nav{
+	width: 100%;
+	height: 30px;
+	position: fixed;
+	bottom: 0;
+	background-color: rgb(240,240,240);
+	overflow: hidden;
+}
+#post_content_page>section{
+	width: 100%;
+}
+#post_content_nav>div{
+	width: 25%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+}
+#post_content_nav>div>div{
+	float: left;
+	font-size: 12px;
+}
+#post_content_nav>div>img{
+	width: 25px;
+	height: 25px;
+	float: left;
+	margin-left: 30%;
+}
+#w_post_top{
+	padding-top: 7.5px;
+	width: 100%;
+	font-weight: bold;
+	font-size: 30px;
+	word-break: break-all;
+	margin-left: 2px;
+	color: #ACD6FF;
+}
+#w_post_content{
+	width: 100%;
+	word-break: break-all;
+	padding-top: 7.5px;
+	margin-left: 2px;
+	line-height:1px;
+}
+.user_picture_show{
+	margin-top:2.5px;
+	margin-left: 10%;
+	max-width: 80%;
+}
+#chat_section>div{
+	max-width:80%;
+	min-height:30px;
+	margin-top:2.5px;
+}
+#chat_section>div>header{
+	width: 30px;
+	height: 30px;
+	border: solid 0px;
+	border-radius:15px;
+	background-image: url(../img/user_heade.png);
+	background-size: 100% 100%;
+	float: left;
+}
+#chat_section>div>div{
+	float: left;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	border: solid 7px;
+	border-color: rgba(0,0,0,0);
+	border-right-color:rgba(25,184,245,1);
+	margin-top:6px;
+}
+#chat_section>div>section{
+	float: left;
+	max-width: 80%;
+	height:auto;
+	font-size: 15px;
+	font-family: 宋体;
+	color: white;
+	background-color: rgba(25,184,245,1);
+	padding:5px;
+	border: solid 0px;
+	border-radius:10px;
+	margin-left:-1px;
+	outline: none;
+	ba
+}

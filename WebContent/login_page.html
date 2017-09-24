@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<title>HH微博-登录</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/login_page.css">
+	<link rel="stylesheet" type="text/css" href="css/home_page.css">
+<style>
+	html{
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		-webkit-user-select: none;
+	}
+	body{
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		background-size: 100% 100%;
+		overflow-x: hidden;
+	}
+</style>
+</head>	
+<body>
+<!--This is the login page "div"-->
+<div id="login_page" style="width: 100%;height: 100%;background-image: url(img/2016.jpg);background-size:  100% 100%;display: block;">
+<header>
+	H H
+</header>
+<section id="signin_page">
+	<input type="text" placeholder="请输入账号" id="username">
+	<input type="password" placeholder="请输入密码" id="password">
+	<input type="button" value="登录 | 注册" onclick="login_button()"id="signin_button">	
+</section>
+<section id="register_page" style="display: none;">
+	<input type="text" placeholder="请输入注册账号" id="register_username">
+	<input type="text" placeholder="请输入注册密码" id="register_password">
+	<input type="text" placeholder="请再次输入注册密码" id="register_password">
+	<input type="text" placeholder="昵称">
+<div  style="margin-top:2%;">
+	<select name="sex" id=""  style="width: 20%;outline: none;">
+		<option>男</option>
+		<option>女</option>
+	</select>
+	<input type="number" placeholder="年龄" style="width: 20%;outline: none;">
+</div>
+	<input type="button" value="注册" onclick="register_button()"id="register_button">	
+	<input type="button" value="有账号直接登录" onclick="go_login_button()"id="signin_button">
+</section>
+<div id="my_prompt_box"></div>
+<script type="text/javascript" src="js/login_page.js"></script>
+</div>
+<!--This is the home page "div"-->
+<div id="home_page" style="width: 100%;height: 100%;display: none;">
+	<link rel="stylesheet" type="text/css" href="css/home_page.css">
+<nav>
+	<div><div style="background-image: url(img/message.png);"></div>信息</div>
+
+	<div onmousedown="home_down()" onmouseup="home_up()" onclick="home_click()"><div style="background-image: url(img/home.png);"></div>主 页</div>
+
+	<div><div style="background-image: url(img/my.png);"></div>我</div>
+	<footer id="arror"></footer>
+</nav>
+<section id="message">
+	
+</section>
+<section id="home" style="display: block;">
+	<div style="height:0;margin-bottom: 0px;">
+		<header>
+			<div id="head_portrait"></div>
+			<div id="post_name"></div>
+			<div id="post_time"></div>
+		</header>
+		<section>
+			<div></div>
+		</section>
+		<footer>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</footer>
+	</div>
+</section>
+<section id="my">
+	
+</section>
+<section id="write_post_page">
+	<input type="text" placeholder="标题5-30个字" id="write_post_title" maxlength="30";>
+	<div id="write_post_content" contenteditable="true"  maxlength="300"></div>
+	<div id="write_post_ok" onclick="write_post_ok_click()">发表</div>
+<nav>
+	<div onclick="document.getElementById('interest_ok').name='房产'">房产</div>
+	<div onclick="document.getElementById('interest_ok').name='IT技术'" >IT技术</div>
+	<div id="interest_ok" name="" style="width: 0;height: 0"></div>
+</nav>
+	<div id="write_post_photo" onclick="write_post_photo_click();"></div>
+<footer id="photo_show">
+	<img src="" alt="" style="width: 0;height: 0;margin-right: 0px;">
+</footer>
+	<input id="file_button" type="file" accept="image/*" style="width: 0;height: 0;" onchange="post_photo_click(this.files)" multiple>
+</section>
+
+
+<section id="post_content_page" style="top: 34px;width: 100%;height: auto;
+	display: none;" name="">
+
+	<nav id="post_content_nav">
+<div onclick="chat_in()"><img src="img/newmessage.png"></div>
+<div onclick="w_post_goodbad('w_post_good')"><img src="img/good.png"><div id="w_post_good"></div></div>
+<div onclick="w_post_goodbad('w_post_bad')"><img src="img/bad.png"><div id="w_post_bad"></div></div>
+<div><img src="img/forward.png"><div></div></div>
+	</nav>
+
+	<header style="width: 100%;height: 35px;overflow: hidden;padding-top: 1px;position:relative;">
+		<div id="post_content_header" style="width: 35px;height: 100%;border: solid 0px;border-radius:20px;background-image: url(img/user_heade.png);background-size: 100% 100%;margin-left: 10px;float: left;">
+		</div>
+		<div style="height: 100%;float: left;margin-left: 10px;">
+			<div style="height: 50%;font-size: 17px;" id="w_post_usename"></div>
+			<div style="width: auto;height: auto;font-size: 5px;background-color: #FFC1E0;padding-left: 3px;padding-right: 2px;border: solid 0px;border-radius:10px;color: white;text-align: center;" id="w_post_time"></div>
+		</div>
+		<div style="width: auto;height: auto;float: right;margin-right: 5px;background-color: orange;font-size: 10px;padding: 1px;border: solid 0px;border-radius:5px;color: white;position:absolute;bottom: 0px;right:0px;" id="w_post_interest"></div>
+	</header>
+		
+	<section>
+<header id="w_post_top"></header>
+<section id="w_post_content"></section>
+	</section>
+
+	<footer style="margin-top:5px;">
+<img id="photo_src1"  src="" alt="" class="user_picture_show">		
+<img id="photo_src2"  src="" alt="" class="user_picture_show">	
+<img id="photo_src3"  src="" alt="" class="user_picture_show">	
+<img id="photo_src4"  src="" alt="" class="user_picture_show">	
+<img id="photo_src5"  src="" alt="" class="user_picture_show">	
+	</footer>
+<div style="width: 100%;height: 30px;"></div>
+</section>
+
+<section id="chat_page" style="position: absolute;top: 34px;width: 100%;height:90%;display: none;overflow: hidden;" name="">
+	<section id="chat_section" style="width: 100%;height:92%;overflow-x: hidden;">
+		<div  style="height:0;width:0;margin-bottom: 0px;overflow: hidden;min-height:0;">
+			<header></header>
+			<div></div>
+			<section>
+			</section>
+		</div>
+	</section>
+
+	<nav style="width: 100%;height:6%;position: fixed;bottom: 0;background-color: rgb(240,240,240);overflow: hidden;text-align: center;min-height:30px;">
+		<div style="width: 10%;height: 20px;border: solid 0px;
+	border-radius:5px;background-color: red;font-size: 12px;text-align: center;line-height: 20px;position:absolute;color: white;background-color: rgba(25,184,245,1);"  onclick="chat_back()">返回</div>
+
+		<input id="chat_text" type="text" style="width: 78%;height: 15px;position:absolute;left: 10.5%;outline: none;" >
+
+		<div style="width: 10%;height: 20px;border: solid 0px;
+	border-radius:5px;background-color: red;font-size: 12px;text-align: center;line-height: 20px;position:absolute;left: 90%;color: white;background-color: rgba(25,184,245,1);" onclick="chat_send()">发送</div>
+	</nav>
+	
+</section>
+<script type="text/javascript" src="js/home_page.js" charse="utf-8"></script>	
+</div>
+</body>	
+</html>
