@@ -1,2 +1,2 @@
 
- ![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+ ![image](https://github.com/HH/img/page1-img1.png)
