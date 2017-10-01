@@ -1,13 +1,24 @@
-//To achieve the stone scissors step game
-//This progarm implements game history
-//Author:guess what
-//Edition:v1.0
+/*
+    (rock paper scissors game)
+
+    @author : confidentiality
+    @version : V1.0
+    @working team: MMD
+    @creation time : 2017/10/1
+    @creation site : SuZhou
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
 struct gamehsave{
     char * us,*cs,*results;
+/*
+Structure variable annotation:
+    @param(us)用户输入
+    @param(cs)电脑输入
+    @param(results)输赢结果
+*/
 };
 char * prompts[10]=
 {
@@ -21,21 +32,30 @@ char * prompts[10]=
     "不能打开文件game.dat",
     "游戏历史记录",
     "\n游戏历史记录"
-};//游戏提示信息封装数组
+};
+//@prarm(prompts)游戏提示信息封装数组
 
-void init(void);
-void startGame(void);
-void historicalRecord(void);
-int coreProgram(int * u_num);
-void data(char ** s,int num);
-void saveHistory(char **us,char **cs,char **results);
+void init(void);                                        //主菜单
+void startGame(void);                                   //开始游戏菜单
+void historicalRecord(void);                            //游戏查看记录(读取结构文件)
+int coreProgram(int * u_num);                           //核心程序
+void data(char ** s,int num);                           //数据转换
+void saveHistory(char **us,char **cs,char **results);   //保存游戏记录
 
 int m_num=0,back,c_num;
-//菜单编号,输入菜单返回编号,电脑的点数
 FILE * gameH;
 struct gamehsave ghs[1000];
 int save_size=sizeof(struct gamehsave);
 int count=0;
+/*
+Variable annotation:
+    @param(m_num)菜单编号
+    @param(back)输入菜单返回编号
+    @param(m_num)电脑的点数
+    @param(gameH)保存文件指针
+    @param(save_size)结构大小
+    @param(count)结构文件计数
+*/
 
 void main(void)
 {
@@ -46,7 +66,7 @@ void main(void)
     rewind(gameH);//定位到文件开始处
 
     for(int i=0;i<50;i++){
-        Sleep(30);//模拟游戏加载
+        Sleep(30);//实现模拟游戏加载(通过windows.h里的Sleep())
         printf(">");
     }
     init();//启动游戏
@@ -56,7 +76,7 @@ void init(void)
     puts(prompts[0]);
     while(1){
         printf("%s\n",prompts[1]);
-        fflush(stdin);//清空缓冲区(如果不清空，缓冲器保留了上一个)
+        fflush(stdin);//清空缓冲区(保证下次循环进入scanf())
         back=scanf("%d",&m_num);
         if(back!=0 && m_num==1){
             startGame();
@@ -103,12 +123,17 @@ void saveHistory(char **us,char **cs,char **results)
 }
 int coreProgram(int * u_num)
 {
-    c_num=rand()%3+1;//电脑输入0,1,2
     char *us,*cs,*promptsi;
+
+    //@(u_num)用户输入数字
+    //@(c_num)电脑输入数字
+    //@(us)用户转义字符串
+    //@(cs)电脑转义字符串
+    //@(promptsi)输赢判断结果
+    c_num=rand()%3+1;
     data(&us,*u_num);
     data(&cs,c_num);
     printf(prompts[6],us,cs);
-    //判断输赢true,false;1石头，2剪刀，3布
     if(*u_num==c_num){
         puts(prompts[3]);
         promptsi=prompts[3];
