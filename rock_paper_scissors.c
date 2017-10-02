@@ -2,7 +2,7 @@
     (rock paper scissors game)
 
     @author : confidentiality
-    @version : V1.0
+    @version : V1.3
     @working team: MMD
     @creation time : 2017/10/1
     @creation site : SuZhou
@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <windows.h>
+#define GHS_SIZE 1000
 struct gamehsave{
     char * us,*cs,*results;
 /*
@@ -20,7 +21,7 @@ Structure variable annotation:
     @param(results)输赢结果
 */
 };
-char * prompts[10]=
+unsigned char * prompts[11]=
 {
     "\n~~~~~~欢迎进入石头剪刀布游戏MMD~~~~~~\n",
     "----请输入菜单功能序号:1.开始游戏 2.游戏历史记录----",
@@ -31,7 +32,8 @@ char * prompts[10]=
     "^^^^^用户:%s,电脑:%s^^^^^\n",
     "不能打开文件game.dat",
     "游戏历史记录",
-    "\n游戏历史记录"
+    "\n游戏历史记录",
+    "%%%%%警告:输入错误%%%%%"
 };
 //@prarm(prompts)游戏提示信息封装数组
 
@@ -42,9 +44,10 @@ int coreProgram(int * u_num);                           //核心程序
 void data(char ** s,int num);                           //数据转换
 void saveHistory(char **us,char **cs,char **results);   //保存游戏记录
 
+
 int m_num=0,back,c_num;
 FILE * gameH;
-struct gamehsave ghs[1000];
+struct gamehsave ghs[GHS_SIZE];
 int save_size=sizeof(struct gamehsave);
 int count=0;
 /*
@@ -70,6 +73,7 @@ void main(void)
         printf(">");
     }
     init();//启动游戏
+    getchar();
 }
 void init(void)
 {
@@ -85,6 +89,7 @@ void init(void)
             historicalRecord();
             break;
         }else{
+            puts(prompts[10]);
             continue;
         }
     }
@@ -98,6 +103,7 @@ void startGame(void)
     if(g_num==1 || g_num==2 || g_num==3){
         coreProgram(&g_num);
     }else{
+        if(g_num!=4){puts(prompts[10]);}
         init();
     }
 }
@@ -113,7 +119,12 @@ void historicalRecord(void)
     }while(ghs[count].us!=NULL);
     puts(prompts[9]);
     count=0;
-    startGame();
+    for(int i=0;i<GHS_SIZE;i++){
+        ghs[i].us=NULL;
+        ghs[i].cs=NULL;
+        ghs[i].results=NULL;
+    }
+    init();
 }
 void saveHistory(char **us,char **cs,char **results)
 {
