@@ -6,6 +6,7 @@
     @working team: MMD
     @creation time : 2017/10/1
     @creation site : SuZhou
+    @programming language : C
 */
 #include <stdio.h>
 #include <stdlib.h>
@@ -82,15 +83,13 @@ void init(void)
         printf("%s\n",prompts[1]);
         fflush(stdin);//清空缓冲区(保证下次循环进入scanf())
         back=scanf("%d",&m_num);
-        if(back!=0 && m_num==1){
-            startGame();
-            break;
-        }else if(back!=0 && m_num==2){
-            historicalRecord();
-            break;
-        }else{
-            puts(prompts[10]);
-            continue;
+
+        switch(m_num){
+            case 1:startGame();break;
+            case 2:historicalRecord();break;
+            default:
+                puts(prompts[10]);
+                continue;
         }
     }
 }
@@ -135,12 +134,12 @@ void saveHistory(char **us,char **cs,char **results)
 int coreProgram(int * u_num)
 {
     char *us,*cs,*promptsi;
-
     //@(u_num)用户输入数字
     //@(c_num)电脑输入数字
     //@(us)用户转义字符串
     //@(cs)电脑转义字符串
     //@(promptsi)输赢判断结果
+
     c_num=rand()%3+1;
     data(&us,*u_num);
     data(&cs,c_num);
